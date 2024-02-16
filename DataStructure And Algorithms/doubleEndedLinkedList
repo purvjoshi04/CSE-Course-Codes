@@ -1,0 +1,153 @@
+# AIM:Write a menu driven program to implement following
+# operations on the double ended linked list.
+# (a) Insert a node at the front of the linked list
+# (b) Insert a node at the end of the linked list
+# (c) Insert a node such that linked list is in ascending order
+# (d) Delete a First node of the linked list
+# (e) Delete a node before specified position
+# (f) Delete a node after specified position.
+
+
+class Node:
+    def __init__(self, data=None, prev=None, next=None):
+        self.data = data
+        self.prev = prev
+        self.next = next
+ 
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+ 
+    def insert_at_front(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+ 
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            current.next = new_node
+            new_node.prev = current
+ 
+    def insert_in_order(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        elif self.head.data > data:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next is not None and current.next.data < data:
+                current = current.next
+            new_node.next = current.next
+            new_node.prev = current
+            if current.next is not None:
+                current.next.prev = new_node
+            current.next = new_node
+ 
+    def delete_first_node(self):
+        if self.head is not None:
+            self.head = self.head.next
+            if self.head is not None:
+                self.head.prev = None
+ 
+    def delete_before_position(self, pos):
+        if self.head is not None:
+            current = self.head
+            while current.next is not None and current.next.data != pos:
+                current = current.next
+            if current.prev is not None:
+                current.prev.next = current.next
+                if current.next is not None:
+                    current.next.prev = current.prev
+                current.prev = None
+                current.next = None
+ 
+    def delete_after_position(self, pos):
+        if self.head is not None:
+            current = self.head
+            while current is not None and current.data != pos:
+                current = current.next
+            if current is not None and current.next is not None:
+                node_to_delete = current.next
+                current.next = node_to_delete.next
+                if node_to_delete.next is not None:
+                    node_to_delete.next.prev = current
+                node_to_delete.prev = None
+                node_to_delete.next = None
+ 
+    def display(self):
+        if self.head is None:
+            print("The linked list is empty.")
+        else:
+            current = self.head
+            while current is not None:
+                print(current.data, end=' ')
+                current = current.next
+        print()
+ 
+# create a doubly linked list object
+dll = DoublyLinkedList()
+ 
+while True:
+    print("\nMenu:")
+    print("1. Insert a node at the front of the linked list")
+    print("2. Insert a node at the end of the linked list")
+    print("3. Insert a node such that linked list is in ascending order")
+    print("4. Delete the first node of the linked list")
+    print("5. Delete a node before specified position")
+    print("6. Delete a node after specified position")
+    print("7. Display the linked list")
+    print("8. Exit")
+ 
+    choice = int(input("Enter your choice: "))
+ 
+    if choice == 1:
+        data = int(input("Enter the data to be inserted at the front: "))
+        dll.insert_at_front(data)
+        print("Node inserted at the front of the linked list.")
+    elif choice == 2:
+      data = int(input("Enter the data to be inserted at the end: "))
+      dll.insert_at_end(data)
+      print("Node inserted at the end of the linked list.")
+
+    elif choice == 3:
+      data = int(input("Enter the data to be inserted in ascending order: "))
+      dll.insert_in_order(data)
+      print("Node inserted in ascending order in the linked list.")
+
+    elif choice == 4:
+      dll.delete_first_node()
+      print("First node deleted from the linked list.")
+
+    elif choice == 5:
+      pos = int(input("Enter the position before which the node is to be deleted: "))
+      dll.delete_before_position(pos)
+      print("Node before position {} deleted from the linked list.".format(pos))
+
+    elif choice == 6:
+      pos = int(input("Enter the position after which the node is to be deleted: "))
+      dll.delete_after_position(pos)
+      print("Node after position {} deleted from the linked list.".format(pos))
+
+    elif choice == 7:
+      print("The linked list is:")
+      dll.display()
+
+    elif choice == 8:
+      print("Exiting the program.")
+      break
+
+    else:
+      print("Invalid choice. Please try again.")
