@@ -1,0 +1,47 @@
+a:link{
+	color: white;
+}
+
+a:visited {
+	color: red;
+}
+
+a:hover{
+	color: blue;
+}
+
+a:active{
+	color: #F5DF4D;
+}
+
+
+
+
+
+
+
+
+#HE{
+text-shadow: 1px 1px 2px 	#00ffff	 ,0  0 25px #ff4d4d, 0 0 5px #bf00ff ;}
+
+
+ #para_1{
+    color:red;
+    font-family: Arial, Helvetice, monospace;
+    font-size: 10px;
+    font-style: initial;
+    text-shadow: 1px 1px 2px 	#00ffff	 ,0  0 25px #ff4d4d, 0 0 5px #bf00ff ;
+}
+
+p.para_2{
+	 color: #9BB7D4;
+         text-align: center;
+	  /*white-space: bo ld;*/
+	 text-shadow: 1px 1px 2px black ,0  0 25px #ff4d4d, 0 0 5px #800000 ;
+}
+
+p.para_3{
+   font-size: 10px;
+   color: #9BB7D4;
+   text-align: justify;
+}

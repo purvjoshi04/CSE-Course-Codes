@@ -1,0 +1,135 @@
+<html>
+
+<head>
+
+<title>My Form</title>
+
+<!--meta charset="UTF-8"-->
+
+</head>
+<body>
+
+<h1>Input types</h1>
+<form autocomplete="off">
+<fieldset>
+<legend align="center">Personal Information</legend>
+
+<label>First name:</label>
+<input type="text" id="fname" name="fname"placeholder="Enter your firstname" size="40"><br><br>
+
+
+<label>Last name:</label>
+<input type="text" id="fname" name="lname" placeholder="Enter your lastname"><br><br>
+
+
+
+<label>Gender:</label>
+<label><input type="radio" name="gender"
+
+value="male"> Male </label>
+
+<label> <input type="radio" name="gender"
+
+value="female"> Female </label><br><br>
+
+<label>Mail ID:</label>
+<input type="email" id="email" name="email"
+placeholder="Enter your mail id" required autofocus><br><br>
+<label>Subjects:</label></br>
+<input type="checkbox" id="sub1" name="wd"
+
+value="WD">
+
+<label for="sub1">Web Develoment</label><br>
+<input type="checkbox" id="sub2" name="maths"
+
+value="Maths">
+
+<label for="sub2">Maths</label><br>
+<input type="checkbox" id="sub3" name="dld"
+
+value="DLD">
+
+<label for="sub3">DLD</label><br><br>
+<label>Select any Color:</label><br>
+<input type="color" id="favcolor"
+
+name="favcolor" value="#ff0000"><br><br>
+
+<label>Select your Birthdate:</label><br>
+<input type="date" id="birthday"
+name="birthday" min="1990-01-01" max="2022-03-11"><br><br>
+<label>Date with Time:</label><br>
+<input type="datetime-local" id="birthday"
+
+name="birthday"><br><br>
+
+<label>Upload file here:</label><br>
+<input type="file" id="myfile" name="myfile"
+
+multiple><br>
+
+<input type="hidden" id="aadarno"
+
+name="aadarno" value="12345"><br>
+
+<label>Select the month:</label><br>
+<input type="month" id="bdaymonth"
+
+name="bdaymonth"><br><br>
+
+<label>Quantity:</label><br>
+<input type="number" id="quantity"
+
+name="quantity" min="1" max="100" step="5"><br><br>
+<label>Password:</label><br>
+<input type="password" id="pass"
+
+name="password" placeholder="Enter the password" pattern="[A-Z a-z]
+{6}"><br><br>
+
+<label>Select the value:</label><br>
+<input type="range" id="value" name="value"
+
+min="0" max="100"><br><br>
+
+<label>Search here:</label><br>
+<input type="search" id="gsearch"
+name="gsearch" placeholder="Enter the text"><br><br>
+<label>Mobile No.</label><br>
+<input type="tel" id="phone" name="phone"
+placeholder="Enter your mobile number" pattern="[0-9]{10}"><br><br>
+
+<label>Select time:</label><br>
+<input type="time" id="timezone" name="time">
+
+<br><br>
+
+<label>Select one Week:</label><br>
+<input type="week" id="week" name="week"><br>
+
+<br>
+
+<label>Enter the url:</label><br>
+<input type="url" id="homepage"
+
+name="homepage"><br><br>
+
+<label>Enter the number</label><br>
+<input type="text" id="num" name="number"
+
+maxlength="4"><br><br>
+
+<input type="image" id="logo" name="img"
+
+src="logo.jpeg" width="90" height="70"><br><br>
+<input type="submit">
+<input type="reset">
+<input type="button" id="click" value="Click">
+</feildset>
+
+</form>
+
+</body>
+
+</html>
