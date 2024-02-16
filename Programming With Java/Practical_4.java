@@ -1,0 +1,2 @@
+/*Write a program to print inputs given from
+command line arguments on the console. */
