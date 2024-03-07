@@ -2,7 +2,7 @@
 
 <hr>
 
-# In this practical i have simple circuit which is used to blink light using arduino 
+###### In this practical i have created simple circuit which is used to blink light using arduino 
 
 [Practical.md](https://github.com/purvjoshi04/Curriculum-Codes/files/14524690/Practical.md)
 
