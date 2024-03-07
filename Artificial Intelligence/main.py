@@ -51,10 +51,7 @@ def predict_y(x_value):
 
 user_x = input("Enter the value of x: ")
 
-try:
-    user_x = float(user_x)
-    
-    predicted_y = predict_y(user_x)
-    print(f"Predicted y value for x={user_x}: {predicted_y}")
-except ValueError:
-    print("Invalid input. Please enter a valid number for x.")
+user_x = float(user_x)
+predicted_y = predict_y(user_x)
+print(f"Predicted y value for x={user_x}: {predicted_y}")
+
