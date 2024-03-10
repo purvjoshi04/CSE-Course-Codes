@@ -2,7 +2,10 @@
 
 <hr>
 
+***Description***
 #### In this practical i have create circuit using arduino which check the temperature and humidity using TMP36 sensor, the threshold humidity is 70 if humidity goes to 70 or above the LED light will blink
+
+<hr>
 
 ***Circuit Diagram***
 
