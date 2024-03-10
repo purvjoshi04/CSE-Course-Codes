@@ -6,7 +6,7 @@
 
 ***Circuit Diagram***
 
-![Screenshot (17)](https://github.com/purvjoshi04/Curriculum-Codes/assets/101319136/23f0ed0e-8664-4443-bb95-dd451756b14c)
+![Screenshot (18)](https://github.com/purvjoshi04/Curriculum-Codes/assets/101319136/cc40fadd-e98f-4cf1-a0a2-f5dea5839304)
 
 <hr>
 
