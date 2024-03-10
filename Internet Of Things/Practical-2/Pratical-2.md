@@ -2,7 +2,10 @@
 
 <hr>
 
+***Description***
 #### In this practical i have created trafic light demo circuit using arduino
+
+<hr>
 
 ***Circuit Diagram***
 
