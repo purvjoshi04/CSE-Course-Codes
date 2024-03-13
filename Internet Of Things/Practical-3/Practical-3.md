@@ -3,13 +3,13 @@
 <hr>
 
 ***Description***
-#### In this practical i have create circuit using arduino which check the temperature and humidity using TMP36 sensor, the threshold humidity is 70 if humidity goes to 70 or above the LED light will blink
+#### In this practical i have create circuit using arduino which check the temperature and humidity using TMP36 sensor and potentiometer.
 
 <hr>
 
 ***Circuit Diagram***
 
-![Screenshot (18)](https://github.com/purvjoshi04/Curriculum-Codes/assets/101319136/cc40fadd-e98f-4cf1-a0a2-f5dea5839304)
+![Screenshot (24)](https://github.com/purvjoshi04/Curriculum-Codes/assets/101319136/5cd52b9d-fb69-45a6-a3db-46a44be2943a)
 
 <hr>
 
@@ -17,43 +17,41 @@
 
 ```cpp
 
-const int tmpPin = A0;  
-const int ledPin = 13;  
+const int analogin = A0;
+int humiditySensorOutput = 0;
+int RawValue = 0;
+double Voltage = 0;
+double tempC = 0;
+double tempF = 0;
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
   Serial.begin(9600);
+  pinMode(A1, INPUT);
 }
 
 void loop() {
-  
-  int tmpValue = analogRead(tmpPin);
-  
+  RawValue = analogRead(analogin);
+  Voltage = (RawValue / 1023.0) * 5000;
+  tempC = (Voltage - 500) * 0.1; 
+  tempF = (tempC * 1.8) + 32; 
 
-  float voltage = tmpValue * (5.0 / 1023.0);
+  Serial.print("Raw Value = ");
+  Serial.print(RawValue);
+  Serial.print("\t milli volts = ");
+  Serial.print(Voltage, 0);
+  Serial.print("\t Temperature in C =");
+  Serial.print(tempC, 1);
+  Serial.print("\t Temperature in F =");
+  Serial.println(tempF, 1);
 
-  float temperatureC = (voltage - 0.5) * 100.0;
-  
+  humiditySensorOutput = analogRead(A1);
 
-  int humidity = map(temperatureC, 0, 40, 0, 100);
-
-  Serial.print("Temperature: ");
-  Serial.print(temperatureC);
-  Serial.print("°C");
-  Serial.print("\tHumidity: ");
-  Serial.print(humidity);
+  Serial.print("Humidity: "); 
+  Serial.print(map(humiditySensorOutput, 0, 1023, 10, 70));
   Serial.println("%");
-  
-  if (humidity >= 70) {
-    digitalWrite(ledPin, HIGH);
-    delay(500);
-    digitalWrite(ledPin, LOW);
-    delay(500);
-  } else {
-    digitalWrite(ledPin, LOW);
-  }
-  
+
   delay(1000); 
 }
+
 
 ```  
