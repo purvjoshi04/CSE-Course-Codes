@@ -16,12 +16,10 @@ except FileNotFoundError:
     print("Error: CSV file not found. Please provide a valid file path.")
     exit()
 
-
-# x = np.array(data_frame['house age'])
-# y = np.array(data_frame['house price of unit area'])
-
-x = np.array(data_frame['year'])
-y = np.array(data_frame['duration'])
+independent_var=os.getenv('INDEPENDENT_VARIABLE')
+dependent_var=os.getenv('DEPENDENT_VARIABLE')
+x = np.array(data_frame[independent_var])
+y = np.array(data_frame[dependent_var])
 x_mean = np.mean(x)
 y_mean = np.mean(y)
 
@@ -47,9 +45,9 @@ while True:
 
 user_x = float(user_x)
 predicted_y = predict_y(user_x)
-print("***************Liner Regression Prediction****************")
-print(f"Independent Variable value of x = {user_x}")
-print(f"Dependent variable value of y = {predicted_y}")
+print("***************Liner Regression Prediction****************\n")
+print(f"Independent Variable value of year (x) = {user_x}")
+print(f"Dependent variable value of duration (y) = {predicted_y}")
 
 
 def calculate_r_squared(y_true, y_predicted):
@@ -62,6 +60,6 @@ def calculate_r_squared(y_true, y_predicted):
 predicted_y = predict_y(x)
 r_squared = calculate_r_squared(y, predicted_y)
 
-print(f"R-squared: {r_squared}")
+print(f"R-squared: {r_squared}\n")
 print("**********************************************************")
 
