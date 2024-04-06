@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-csv_file_path = os.getenv('CSV_FILE_PATH')
+csv_file_path = os.getenv('CSV_FILE_SECOND')
 if csv_file_path is None:
     print("Error: CSV file path is not provided in the environment variables.")
     exit()
@@ -46,8 +46,8 @@ while True:
 user_x = float(user_x)
 predicted_y = predict_y(user_x)
 print("***************Liner Regression Prediction****************\n")
-print(f"Independent Variable value of year (x) = {user_x}")
-print(f"Dependent variable value of duration (y) = {predicted_y}")
+print(f"Independent Variable value of {independent_var} (x) = {user_x}")
+print(f"Dependent variable value of {dependent_var} (y) = {predicted_y}")
 
 
 def calculate_r_squared(y_true, y_predicted):
