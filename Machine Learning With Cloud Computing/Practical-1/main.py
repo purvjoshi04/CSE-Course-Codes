@@ -4,10 +4,6 @@ from dotenv import load_dotenv
 
 
 def main():
-    # if not path.exists(".env"):
-    #     print("Create a env file with DATASET, COLUMN_1 and COLUMN_2")
-    #     return
-
     load_dotenv()
     csv_file = getenv("DATASET")
 
