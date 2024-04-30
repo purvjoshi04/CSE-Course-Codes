@@ -22,7 +22,22 @@ def main():
     )
     column_1 = getenv("COLUMN_1").split(",")
     column_2 = getenv("COLUMN_2").split(",")
-
+    # e) How to create data frame
+    print("***************************** Data Frame *********************************")
+    df = pd.DataFrame(
+        {
+            "Name": [
+                "Braund, Mr. Owen Harris",
+                "Allen, Mr. William Henry",
+                "Bonnell, Miss. Elizabeth",
+            ],
+            "Age": [22, 35, 58],
+            "Sex": ["male", "male", "female"],
+        }
+    )
+    print(df)
+    print("***************************************************************************")
+    # f) How to clean Data by using pandas
     # b) Cleaning Empty Cells
     for column in column_1:
         if csv_data[column].hasnans:
@@ -41,9 +56,7 @@ def main():
     csv_data.drop_duplicates(inplace=True)
     print("***************************** New Dataset *********************************")
     print(csv_data.to_string())
-    print(
-        "******************************************************************************"
-    )
+    print("***************************************************************************")
 
 
 main()
